@@ -1,0 +1,90 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../vendor/shadcn-tailwind-4.13.0.css";
+
+@utility scrollbar-thin { scrollbar-width: thin; }
+@utility scrollbar-none { scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
+
+:root {
+  --background: #fbf7ef;
+  --foreground: #143f34;
+  --card: #ffffff;
+  --card-foreground: #143f34;
+  --popover: #ffffff;
+  --popover-foreground: #143f34;
+  --primary: #124837;
+  --primary-foreground: #ffffff;
+  --secondary: #e5f0e7;
+  --secondary-foreground: #143f34;
+  --muted: #f1ede5;
+  --muted-foreground: #667a72;
+  --accent: #ffe1d5;
+  --accent-foreground: #143f34;
+  --destructive: #c43c32;
+  --border: #dbe2dc;
+  --input: #cdd8d1;
+  --ring: #ec663f;
+  --chart-1: #ec663f;
+  --chart-2: #124837;
+  --chart-3: #bbd83f;
+  --chart-4: #629b79;
+  --chart-5: #e4b344;
+  --radius: 0.65rem;
+  --forest: #124837;
+  --forest-2: #1c5c48;
+  --cream: #fbf7ef;
+  --coral: #ec663f;
+  --lime: #cde55b;
+  --mint: #e3f0e6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-forest: var(--forest);
+  --color-forest-2: var(--forest-2);
+  --color-cream: var(--cream);
+  --color-coral: var(--coral);
+  --color-lime: var(--lime);
+  --color-mint: var(--mint);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 7px);
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--background); color: var(--foreground); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+::selection { background: #ec663f; color: white; }
+.font-display { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.eyebrow { color: var(--coral); font-size: .75rem; font-weight: 800; letter-spacing: .19em; text-transform: uppercase; }
+.section-title { color: var(--forest); font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: clamp(2.25rem, 4vw, 3.9rem); font-weight: 760; line-height: 1.03; letter-spacing: -.045em; }
+.field-label { display: block; margin-bottom: .5rem; color: var(--forest); font-size: .82rem; font-weight: 750; }
+.field-help { margin-top: .45rem; color: color-mix(in srgb, var(--forest), transparent 48%); font-size: .75rem; }
+.app-input { min-height: 3rem; border-radius: .9rem; border-color: color-mix(in srgb, var(--forest), transparent 82%); background: white; box-shadow: none; }
+.app-input:focus-visible { border-color: var(--coral); box-shadow: 0 0 0 3px rgba(236,102,63,.13); }
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+  .print-card { box-shadow: none !important; break-inside: avoid; }
+}
